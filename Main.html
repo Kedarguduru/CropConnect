@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="https://res.cloudinary.com/dovax6xke/image/upload/f_auto,q_auto/v1/carrier/fs5ukivkdqcybsbfn2d6">
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/dovax6xke/image/upload/f_auto,q_auto/v1/carrier/fs5ukivkdqcybsbfn2d6">
+    <link rel="apple-touch-icon" href="https://res.cloudinary.com/dovax6xke/image/upload/f_auto,q_auto/v1/carrier/fs5ukivkdqcybsbfn2d6">
+    <title>CropConnect - Navigation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="root"></div> 
+    <nav class="nav-container">
+        <div class="logo" onclick="showPage('intro')">
+            <img src="https://res.cloudinary.com/dovax6xke/image/upload/f_auto,q_auto/v1/carrier/Pics/p5pgabvnxn7nfh1mj3sf" alt="Company Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a onclick="showPage('home')">Home</a></li>
+            <li><a onclick="showPage('crops')">Crops</a></li>
+            <li><a onclick="showPage('production')">Production</a></li>
+            <li><a onclick="showPage('protection')">Protection</a></li>
+            <li><a onclick="showPage('schemes')">Schemes</a></li>
+            <li><a onclick="showPage('contract')">Contract</a></li>
+            <li><a onclick="showPage('customer-care')">Customer Care</a></li>
+        </ul>
+        <div class="profile-container" onclick="toggleDropdown()">
+            <div class="profile-img">
+                <img src="https://cdn-icons-png.flaticon.com/512/6522/6522516.png" alt="Profile">
+            </div>
+            <div class="dropdown-menu">
+                <button onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content-area" id="content">
+        <h1>Welcome to CropConnect</h1>
+        <p>This is the intro page. Click the navigation links above to explore!</p>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <p>© 2025 CropConnect. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+       const pages = {
+    'intro': `
+        <h1>Welcome to CropConnect</h1>
+        <p>This is the intro page. Click the navigation links above to explore!</p>
+    `,
+    'home': `
+        <h1>Home</h1>
+        <p>Welcome to your farming hub. Find all your agricultural needs here.</p>
+    `,
+    'crops': `
+    <div class="crops-container">
+        <h1>Crop Categories</h1>
+        <p>Select a category to explore different types of crops.</p>
+        <div class="horticulture-wrapper">
+            <div class="horticulture-container" onclick="showPage('horticulture')">
+                <img src="https://res.cloudinary.com/dovax6xke/image/upload/v1741095042/carrier/jvgsjxvw4wlhyfed1tio.jpg" alt="Horticulture">
+                <div class="horticulture-text">Horticulture</div>
+            </div>
+        </div>
+    </div>
+`,
+
+
+   
+  'horticulture': `
+    <div class="crops-container">
+        <h1>Horticulture Crops</h1>
+        <p>Select a category to explore different horticultural crops.</p>
+        <div class="horticulture-wrapper">
+            <div class="horticulture-container" onclick="showPage('fruits')">
+                <img src="https://cdn-icons-png.flaticon.com/512/415/415744.png" alt="Fruits">
+                <div class="horticulture-text">Fruits</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('vegetables')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Vegetables">
+                <div class="horticulture-text">Vegetables</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('flowers')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2529/2529949.png" alt="Flowers">
+                <div class="horticulture-text">Flowers</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('herbs')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2284/2284236.png" alt="Herbs">
+                <div class="horticulture-text">Herbs</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('spices')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Spices">
+                <div class="horticulture-text">Spices</div>
+            </div>
+        </div>
+    </div>
+`,
+
+'fruits': `
+    <div class="crops-container">
+        <h1>Fruits</h1>
+        <p>Click on a fruit to learn more.</p>
+        <div class="horticulture-wrapper">
+            <div class="horticulture-container" onclick="showPage('apple')">
+                <img src="https://cdn-icons-png.flaticon.com/512/415/415744.png" alt="Apple">
+                <div class="horticulture-text">Apple</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('banana')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Banana">
+                <div class="horticulture-text">Banana</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('grapes')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Grapes">
+                <div class="horticulture-text">Grapes</div>
+            </div>
+        </div>
+    </div>
+`,
+
+'apple': `
+    <div class="crops-container">
+        <h1>Apple</h1>
+        <p>Best practices for growing apples.</p>
+        <ul>
+            <li>Plant in cool climates with well-drained soil.</li>
+            <li>Prune regularly to encourage growth.</li>
+            <li>Protect from pests and diseases.</li>
+        </ul>
+    </div>
+`,
+
+'banana': `
+    <div class="crops-container">
+        <h1>Banana</h1>
+        <p>How to cultivate high-yield bananas.</p>
+        <ul>
+            <li>Requires warm, humid climate.</li>
+            <li>Provide ample water but avoid waterlogging.</li>
+            <li>Fertilize with potassium-rich nutrients.</li>
+        </ul>
+    </div>
+`,
+
+'vegetables': `
+    <div class="crops-container">
+        <h1>Vegetables</h1>
+        <p>Click on a vegetable to learn more.</p>
+        <div class="horticulture-wrapper">
+            <div class="horticulture-container" onclick="showPage('tomato')">
+                <img src="https://cdn-icons-png.flaticon.com/512/415/415744.png" alt="Tomato">
+                <div class="horticulture-text">Tomato</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('potato')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Potato">
+                <div class="horticulture-text">Potato</div>
+            </div>
+        </div>
+    </div>
+`,
+
+'flowers': `
+    <div class="crops-container">
+        <h1>Flowers</h1>
+        <p>Select a flower to learn more.</p>
+        <div class="horticulture-wrapper">
+            <div class="horticulture-container" onclick="showPage('rose')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2277/2277995.png" alt="Rose">
+                <div class="horticulture-text">Rose</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('marigold')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2277/2277995.png" alt="Marigold">
+                <div class="horticulture-text">Marigold</div>
+            </div>
+        </div>
+    </div>
+`,
+
+'rose': `
+    <div class="crops-container">
+        <h1>Rose</h1>
+        <p>Best ways to grow beautiful roses.</p>
+        <ul>
+            <li>Provide full sunlight.</li>
+            <li>Water deeply but not too frequently.</li>
+            <li>Use organic compost for better blooms.</li>
+        </ul>
+    </div>
+`,
+
+'herbs': `
+    <div class="crops-container">
+        <h1>Herbs</h1>
+        <p>Click on an herb to learn more.</p>
+        <div class="horticulture-wrapper">
+            <div class="horticulture-container" onclick="showPage('basil')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Basil">
+                <div class="horticulture-text">Basil</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('mint')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Mint">
+                <div class="horticulture-text">Mint</div>
+            </div>
+        </div>
+    </div>
+`,
+
+'basil': `
+    <div class="crops-container">
+        <h1>Basil</h1>
+        <p>How to cultivate basil successfully.</p>
+        <ul>
+            <li>Requires warm temperatures.</li>
+            <li>Water regularly but avoid wet soil.</li>
+            <li>Prune to encourage bushy growth.</li>
+        </ul>
+    </div>
+`,
+
+'spices': `
+    <div class="crops-container">
+        <h1>Spices</h1>
+        <p>Click on a spice to learn more.</p>
+        <div class="horticulture-wrapper">
+            <div class="horticulture-container" onclick="showPage('turmeric')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Turmeric">
+                <div class="horticulture-text">Turmeric</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('black_pepper')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Black Pepper">
+                <div class="horticulture-text">Black Pepper</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Chilli')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Black Pepper">
+                <div class="horticulture-text">Chilli</div>
+            </div>
+        </div>
+    </div>
+`,
+
+'turmeric': `
+    <div class="crops-container">
+        <h1>Turmeric</h1>
+        <p>Steps to grow turmeric successfully.</p>
+        <ul>
+            <li>Plant in warm, humid climates.</li>
+            <li>Use well-drained, fertile soil.</li>
+            <li>Harvest after 7-10 months.</li>
+        </ul>
+    </div>
+`,
+
+'chilli': `
+    <div class="crops-container">
+        <h1>Chilli</h1>
+        <p>Steps to grow Chilli successfully.</p>
+        <ul>
+            <li>Plant in warm, humid climates.</li>
+            <li>Use well-drained, fertile soil.</li>
+            <li>Harvest after 7-10 months.</li>
+        </ul>
+    </div>
+`,
+
+
+            'production': `
+                <h1>Production</h1>
+                <p>Learn about modern farming techniques and production methods.</p>
+            `,
+            'protection': `
+                <h1>Protection</h1>
+                <p>Discover crop protection solutions and pest management.</p>
+            `,
+            'schemes': `
+                <h1>Schemes</h1>
+                <p>Find government schemes and subsidies for farmers.</p>
+            `,
+            'contract': `
+                <h1>Contract</h1>
+                <p>Information about contract farming opportunities.</p>
+            `,
+            'customer-care': `
+                <h1>Customer Care</h1>
+                <p>Contact our support team for assistance.</p>
+            `
+        };
+
+        function showPage(page) {
+            document.getElementById('content').innerHTML = pages[page] || pages['intro'];
+        }
+
+        function toggleDropdown() {
+            const dropdown = document.querySelector('.dropdown-menu');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function logout() {
+            alert("Logged Out Successfully");
+            document.getElementById('content').innerHTML = '<h1>Logged Out</h1><p>Please log in again to continue.</p>';
+            window.location.href="intro.html";
+        }
+ 
+        // Set initial page
+        showPage('intro');
+    </script>
+    
+</body>
+</html>

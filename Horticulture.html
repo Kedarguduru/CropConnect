@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horticulture Crops</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        .horticulture-container img {
+            width: 100px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .horticulture-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#" onclick="showPage('horticulture'); return false;">Home</a>
+    </nav>
+
+    <div id="content">
+        <h1>Welcome</h1>
+        <p>Click on a category to explore different horticultural crops.</p>
+    </div>
+
+    <script>
+       const pages = {
+    'horticulture': `
+        <div class="crops-container">
+            <h1>Horticulture Crops</h1>
+            <p>Select a category to explore different horticultural crops.</p>
+            <div class="horticulture-wrapper">
+                <div class="horticulture-container" onclick="showPage('fruits')">
+                    <img src="https://cdn-icons-png.flaticon.com/512/415/415744.png" alt="Fruits">
+                    <div class="horticulture-text">Fruits</div>
+                </div>
+                <div class="horticulture-container" onclick="showPage('vegetables')">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Vegetables">
+                    <div class="horticulture-text">Vegetables</div>
+                </div>
+                <div class="horticulture-container" onclick="showPage('flowers')">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2529/2529949.png" alt="Flowers">
+                    <div class="horticulture-text">Flowers</div>
+                </div>
+            </div>
+            <button onclick="showPage('crops')">Back to Crops</button>
+        </div>
+    `,
+};
+
+function showPage(page) {
+    const contentDiv = document.getElementById('content');
+    contentDiv.innerHTML = ''; // Clears previous content to avoid duplication
+    setTimeout(() => { // Ensures images are properly loaded
+        if (pages[page]) {
+            contentDiv.innerHTML = pages[page];
+        } else {
+            contentDiv.innerHTML = "<h1>Page not found</h1><p>The page you are looking for does not exist.</p>";
+        }
+    }, 100);
+}
+
+    </script>
+</body>
+</html>
